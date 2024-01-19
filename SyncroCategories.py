@@ -17,10 +17,13 @@ fields = [
 ]
 
 print("------------------------------------------------")
-print("Inizializzazione sincronizzazione: " + controller)
+print("Inizializzazione Sincronizzazione: " + controller.upper())
 
 #read and create data output
 sql = Query.builderQuery("SELECT","TBLCM",fields,[],[],{'TBLCM_DESCRIZIONE1':'ASC'})
+print("Esecuzione QUERY: " + sql)
+print("Lettura DATI...")
+
 data = Query.exQueryData(sql)
 dataJson = []
 
@@ -36,33 +39,25 @@ for d in data:
 
     dataJson.append(data4json)
 
-print("Esecuzione Query: " + sql)
-print("Lettura dati...")
-
 #create json
+print("Creazione JSON...")
 fileJson = json.dumps(dataJson, indent=2)
 with open('temp/'+nameFileJson, "w") as outfile:
     outfile.write(fileJson)
 
-print("Creazione Json...")
-
 #upload fila FTP
+print("Upload file FTP...")
 Ftp.upload('temp/'+nameFileJson,'import/'+nameFileJson)
-
-print("Upload fie su FTP...")
 
 #call api url 
 apiKey = config.get("api", "api_key")
 urlApi = config.get("api", "api_url")+fileController+"?apiKey="+apiKey+"&controller="+controller+""
-
+print("Chiamata API: " + urlApi + '...')
 Utility.callApi(urlApi)
 
-print("Chiamata API... " + urlApi)
-
 #delete tmp file
-os.remove('temp/'+nameFileJson)
-
 print("Pulizia e rimozione file...")
+os.remove('temp/'+nameFileJson)
 
 print("Procedura di sicronizzazione completata!")
 print("------------------------------------------------")
