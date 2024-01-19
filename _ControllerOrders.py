@@ -3,7 +3,7 @@ import threading
 import tkinter as tk
 import smtplib
 
-import OrdersAddonSyncro
+import ClassOrdersAddonSyncro
 from classOrders import Orders
 
 def buttonOrders():
@@ -25,7 +25,7 @@ def timer():
 #Form
 form = tk.Tk()
 form.geometry("600x400")
-form.title(OrdersAddonSyncro.get_configuration().get('general','app_name'))
+form.title(ClassOrdersAddonSyncro.get_configuration().get('general','app_name'))
 form.resizable(False,False)
 #form.configure(background="white")
 

@@ -1,7 +1,7 @@
 #general class
 import configparser
 
-class OrdersAddonSyncro:
+class OrdersAddonSyncro_:
 
     def get_configuration():
         config = configparser.ConfigParser()

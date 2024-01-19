@@ -3,7 +3,7 @@ import json
 
 class Utility:
 
-    def callApi(url):
+    def callApiBk(url):
         r = requests.get(url)
         #'http://echo.jsontest.com/key/value/one/two'
         #cprint(r.text) # contenuto della risposta HTTP
@@ -13,6 +13,11 @@ class Utility:
         #print(r.history) # informazioni sui reindirizzamenti
         result = json.loads(r.text)
         return result
+    
+
+    def callApi(url):
+        r = requests.get(url)
+        return r.text
 
     
     

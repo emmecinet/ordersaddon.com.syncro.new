@@ -1,4 +1,5 @@
 {
     "python.analysis.extraPaths": [
+        "./_1.0_old"
     ]
 }

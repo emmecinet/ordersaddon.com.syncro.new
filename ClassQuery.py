@@ -1,5 +1,5 @@
 import pyodbc
-from classOrdersAddonSyncro import OrdersAddonSyncro
+from ClassOrdersAddonSyncro import OrdersAddonSyncro
 
 class Query:
     def __init__(self, dns):
@@ -92,8 +92,8 @@ class Query:
         conn = pyodbc.connect('DSN='+OrdersAddonSyncro.get_configuration().get('connection','conn_dns')+';')
         cursor = conn.cursor()
         rows = cursor.execute(sql)
-        #data = rows.fetchall()
-        data = [data[0] for data in rows.fetchall()]
+        data = rows.fetchall()
+        #data = [data[0] for data in rows.fetchall()]
         conn.close
 
         return data

@@ -1,5 +1,5 @@
 from classConfig import Config
-from classOrdersAddonSyncro import OrdersAddonSyncro
+from ClassOrdersAddonSyncro import OrdersAddonSyncro
 from classQuery import Query
 from classUtility import Utility
 

@@ -3,8 +3,8 @@ import threading
 import tkinter as tk
 import smtplib
 
-from classOrdersAddonSyncro import OrdersAddonSyncro
-from classOrders import Orders
+from ClassOrdersAddonSyncro import OrdersAddonSyncro
+from ClassOrders import Orders
 
 def buttonOrders():
     text1.delete("1.0","end")
