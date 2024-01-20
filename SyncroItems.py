@@ -2,108 +2,121 @@ from ClassOrdersAddonSyncro import OrdersAddonSyncro
 from ClassQuery import Query
 from ClassUtility import Utility
 from ClassFtp import Ftp
+from datetime import datetime
 
 import os
 import json
 
-#vars
-config = OrdersAddonSyncro.get_configuration()
-fileController = 'wsItems.php'
-controller = "Items"
-nameFileJson = 'Syncro.Items.json'
-fields = [
-    'ART_CODICE', 
-    'ART_CODICE_ALTERNATIVO', 
-    'ART_DESCRIZIONE1', 
-    'ART_DESCRIZIONE2', 
-    'ART_CODICE_UM', 
-    'ART_CODICE_UM1', 
-    'ART_CONVERSIONE', 
-    'ART_VOLUME', 
-    'ART_CODICE_IV_VEN', 
-    'ART_CODICE_CM', 
-    'ART_CODICE_ME', 
-    'ART_CODICE_IN', 
-    'ART_CODICE_FRN', 
-    'ART_LOTTO_VENDITA', 
-    'ART_TBLSE_CODICE',
-    'ART_IMPEGNATO',
-    'ART_ORDINATO',
-]
+class SyncroItems:
 
-print("------------------------------------------------")
-print("Inizializzazione Sincronizzazione: " + controller.upper())
+    def syncro():
+        
+        #vars
+        config = OrdersAddonSyncro.get_configuration()
+        fileController = 'wsItems.php'
+        controller = "Items"
+        nameFileJson = 'Syncro.Items.json'
+        table = "ART"
+        fields = [
+            'ART_CODICE', 
+            'ART_CODICE_ALTERNATIVO', 
+            'ART_DESCRIZIONE1', 
+            'ART_DESCRIZIONE2', 
+            'ART_CODICE_UM', 
+            'ART_CODICE_UM1', 
+            'ART_CONVERSIONE', 
+            'ART_VOLUME', 
+            'ART_CODICE_IV_VEN', 
+            'ART_CODICE_CM', 
+            'ART_CODICE_ME', 
+            'ART_CODICE_IN', 
+            'ART_CODICE_FRN', 
+            'ART_LOTTO_VENDITA', 
+            'ART_TBLSE_CODICE',
+            'ART_IMPEGNATO',
+            'ART_ORDINATO',
+        ]
+        curDateTime = datetime.now()
+        curDateTime = str(curDateTime.year) + "_" + str(curDateTime.month) + "_" + str(curDateTime.day)
 
-#read and create data output
-sql = Query.builderQuery("SELECT","ART",fields,[],[],{'ART_CODICE':'ASC'})
-print("Esecuzione QUERY: " + sql)
-print("Lettura DATI...")
+        print("------------------------------------------------")
+        print(datetime.now())
+        print("Inizializzazione Sincronizzazione: " + controller.upper())
 
-data = Query.exQueryData(sql)
-dataJson = []
+        #read and create data output
+        sql = Query.builderQuery("SELECT",table,fields,[],[],{'ART_CODICE':'ASC'})
+        print("Esecuzione QUERY: " + sql)
+        print("Lettura DATI...")
 
-for d in data:
+        data = Query.exQueryData(sql)
+        dataJson = []
 
-    data4json = {
-        'ART_CODICE': '',
-        'ART_CODICE_ALTERNATIVO': '',
-        'ART_DESCRIZIONE1': '',
-        'ART_DESCRIZIONE2': '',
-        'ART_CODICE_UM': '',
-        'ART_CODICE_UM1': '',
-        'ART_CONVERSIONE': '',
-        'ART_VOLUME': '',
-        'ART_CODICE_IV_VEN': '',
-        'ART_CODICE_CM': '',
-        'ART_CODICE_ME': '',
-        'ART_CODICE_IN': '',
-        'ART_CODICE_FRN': '',
-        'ART_LOTTO_VENDITA': '',
-        'ART_TBLSE_CODICE': '',
-        'ART_IMPEGNATO': '',
-        'ART_ORDINATO': ''
-    }
+        for d in data:
 
-    data4json['ART_CODICE'] = d[0]
-    data4json['ART_CODICE_ALTERNATIVO'] = d[1]
-    data4json['ART_DESCRIZIONE1'] = d[2]
-    data4json['ART_DESCRIZIONE2'] = d[3]
-    data4json['ART_CODICE_UM'] = d[4]
-    data4json['ART_CODICE_UM1'] = d[5]
-    data4json['ART_CONVERSIONE'] = d[6]
-    data4json['ART_VOLUME'] = d[7]
-    data4json['ART_CODICE_IV_VEN'] = d[8]
-    data4json['ART_CODICE_CM'] = d[9]
-    data4json['ART_CODICE_ME'] = d[10]
-    data4json['ART_CODICE_IN'] = d[11]
-    data4json['ART_CODICE_FRN'] = d[12]
-    data4json['ART_LOTTO_VENDITA'] = d[13]
-    data4json['ART_TBLSE_CODICE'] = d[14]
-    data4json['ART_IMPEGNATO'] = d[15]
-    data4json['ART_ORDINATO'] = d[16]
+            data4json = {
+                'ART_CODICE': '',
+                'ART_CODICE_ALTERNATIVO': '',
+                'ART_DESCRIZIONE1': '',
+                'ART_DESCRIZIONE2': '',
+                'ART_CODICE_UM': '',
+                'ART_CODICE_UM1': '',
+                'ART_CONVERSIONE': '',
+                'ART_VOLUME': '',
+                'ART_CODICE_IV_VEN': '',
+                'ART_CODICE_CM': '',
+                'ART_CODICE_ME': '',
+                'ART_CODICE_IN': '',
+                'ART_CODICE_FRN': '',
+                'ART_LOTTO_VENDITA': '',
+                'ART_TBLSE_CODICE': '',
+                'ART_IMPEGNATO': '',
+                'ART_ORDINATO': ''
+            }
 
-    dataJson.append(data4json)
+            data4json['ART_CODICE'] = d[0]
+            data4json['ART_CODICE_ALTERNATIVO'] = d[1]
+            data4json['ART_DESCRIZIONE1'] = d[2]
+            data4json['ART_DESCRIZIONE2'] = d[3]
+            data4json['ART_CODICE_UM'] = d[4]
+            data4json['ART_CODICE_UM1'] = d[5]
+            data4json['ART_CONVERSIONE'] = d[6]
+            data4json['ART_VOLUME'] = d[7]
+            data4json['ART_CODICE_IV_VEN'] = d[8]
+            data4json['ART_CODICE_CM'] = d[9]
+            data4json['ART_CODICE_ME'] = d[10]
+            data4json['ART_CODICE_IN'] = d[11]
+            data4json['ART_CODICE_FRN'] = d[12]
+            data4json['ART_LOTTO_VENDITA'] = d[13]
+            data4json['ART_TBLSE_CODICE'] = d[14]
+            data4json['ART_IMPEGNATO'] = d[15]
+            data4json['ART_ORDINATO'] = d[16]
 
-#create json
-print("Creazione JSON...")
-fileJson = json.dumps(dataJson, indent=2)
-with open('temp/'+nameFileJson, "w") as outfile:
-    outfile.write(fileJson)
+            dataJson.append(data4json)
 
-#upload fila FTP
-print("Upload file FTP...")
-Ftp.upload('temp/'+nameFileJson,'import/'+nameFileJson)
+        #create json
+        print("Creazione JSON...")
+        fileJson = json.dumps(dataJson, indent=2)
+        with open('temp/'+nameFileJson, "w") as outfile:
+            outfile.write(fileJson)
 
-#call api url 
-apiKey = config.get("api", "api_key")
-urlApi = config.get("api", "api_url")+fileController+"?apiKey="+apiKey+"&controller="+controller+""
-print("Chiamata API: " + urlApi + '...')
-Utility.callApi(urlApi)
+        #upload fila FTP
+        print("Upload file FTP...")
+        Ftp.upload('temp/'+nameFileJson,'import/'+nameFileJson)
+        Ftp.upload('temp/'+nameFileJson,'log/'+curDateTime+"_"+nameFileJson)
 
-#delete tmp file
-print("Pulizia e rimozione file...")
-os.remove('temp/'+nameFileJson)
+        #call api url 
+        apiKey = config.get("api", "api_key")
+        urlApi = config.get("api", "api_url")+fileController+"?apiKey="+apiKey+"&controller="+controller+""
+        print("Chiamata API: " + urlApi + '...')
+        callApi = Utility.callApi(urlApi)
+        print(callApi)
 
-print("Procedura di sicronizzazione completata!")
-print("------------------------------------------------")
+        #delete tmp file
+        print("Pulizia e rimozione file...")
+        os.remove('temp/'+nameFileJson)
 
+        print("Procedura di sicronizzazione completata!")
+        print(datetime.now())
+        print("------------------------------------------------")
+
+SyncroItems.syncro()

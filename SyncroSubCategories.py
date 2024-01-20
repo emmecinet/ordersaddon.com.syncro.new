@@ -13,13 +13,14 @@ class SyncroCategories:
 
         #vars
         config = OrdersAddonSyncro.get_configuration()
-        fileController = 'wsCategories.php'
-        controller = "Categories"
-        nameFileJson = 'Syncro.Categories.json'
-        table = "TBLCM"
+        fileController = 'wsSubCategories.php'
+        controller = "SubCategories"
+        nameFileJson = 'Syncro.SubCategories.json'
+        table = "TBLME"
         fields = [
-            'TBLCM_CODICE2', 
-            'TBLCM_DESCRIZIONE1',
+            'TBLME_CODICE2', 
+            'TBLME_DESCRIZIONE1',
+            'TBLME_DESCRIZIONE2',
         ]
         curDateTime = datetime.now()
         curDateTime = str(curDateTime.year) + "_" + str(curDateTime.month) + "_" + str(curDateTime.day)
@@ -29,7 +30,7 @@ class SyncroCategories:
         print("Inizializzazione Sincronizzazione: " + controller.upper())
 
         #read and create data output
-        sql = Query.builderQuery("SELECT",table,fields,[],[],{'TBLCM_DESCRIZIONE1':'ASC'})
+        sql = Query.builderQuery("SELECT",table,fields,[],[],{'TBLME_DESCRIZIONE1':'ASC'})
         print("Esecuzione QUERY: " + sql)
         print("Lettura DATI...")
 
@@ -39,12 +40,14 @@ class SyncroCategories:
         for d in data:
             
             data4json = {
-                'TBLCM_CODICE2': '',
-                'TBLCM_DESCRIZIONE1': ''
+                'TBLME_CODICE2': '',
+                'TBLME_DESCRIZIONE1': '',
+                'TBLME_DESCRIZIONE2': ''
             }
 
-            data4json['TBLCM_CODICE2'] = d[0]
-            data4json['TBLCM_DESCRIZIONE1'] = d[1]
+            data4json['TBLME_CODICE2'] = d[0]
+            data4json['TBLME_DESCRIZIONE1'] = d[1]
+            data4json['TBLME_DESCRIZIONE2'] = d[2]
 
             dataJson.append(data4json)
 

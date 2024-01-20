@@ -7,19 +7,24 @@ from datetime import datetime
 import os
 import json
 
-class SyncroCategories:
+class SyncroPriceList:
 
     def syncro():
 
         #vars
         config = OrdersAddonSyncro.get_configuration()
-        fileController = 'wsCategories.php'
-        controller = "Categories"
-        nameFileJson = 'Syncro.Categories.json'
-        table = "TBLCM"
+        fileController = 'wsPriceLists.php'
+        controller = "PriceLists"
+        nameFileJson = 'Syncro.PriceLists.json'
+        table = "LIS"
         fields = [
-            'TBLCM_CODICE2', 
-            'TBLCM_DESCRIZIONE1',
+            'LIS_CODICE_ART', 
+            'LIS_CODICE_LI',
+            'LIS_PREZZO_01',
+            'LIS_AA',
+            'LIS_MM',
+            'LIS_GG',
+            'LIS_DATA_FINE_VLD',
         ]
         curDateTime = datetime.now()
         curDateTime = str(curDateTime.year) + "_" + str(curDateTime.month) + "_" + str(curDateTime.day)
@@ -29,7 +34,7 @@ class SyncroCategories:
         print("Inizializzazione Sincronizzazione: " + controller.upper())
 
         #read and create data output
-        sql = Query.builderQuery("SELECT",table,fields,[],[],{'TBLCM_DESCRIZIONE1':'ASC'})
+        sql = Query.builderQuery("SELECT",table,fields,[],[],{'LIS_CODICE_ART':'ASC'})
         print("Esecuzione QUERY: " + sql)
         print("Lettura DATI...")
 
@@ -39,12 +44,22 @@ class SyncroCategories:
         for d in data:
             
             data4json = {
-                'TBLCM_CODICE2': '',
-                'TBLCM_DESCRIZIONE1': ''
+                'LIS_CODICE_ART': '',
+                'LIS_CODICE_LI': '',
+                'LIS_PREZZO_01': '',
+                'LIS_AA': '',
+                'LIS_MM': '',
+                'LIS_GG': '',
+                'LIS_DATA_FINE_VLD': '',
             }
 
-            data4json['TBLCM_CODICE2'] = d[0]
-            data4json['TBLCM_DESCRIZIONE1'] = d[1]
+            data4json['LIS_CODICE_ART'] = d[0]
+            data4json['LIS_CODICE_LI'] = d[1]
+            data4json['LIS_PREZZO_01'] = d[2]
+            data4json['LIS_AA'] = d[3]
+            data4json['LIS_MM'] = d[4]
+            data4json['LIS_GG'] = d[5]
+            data4json['LIS_DATA_FINE_VLD'] = d[6]
 
             dataJson.append(data4json)
 
@@ -74,4 +89,4 @@ class SyncroCategories:
         print(datetime.now())
         print("------------------------------------------------")
 
-SyncroCategories.syncro()
+SyncroPriceList.syncro()

@@ -9,31 +9,31 @@ class Query:
         
         if type_query == "INSERT":
 
-            sql = "INSERT INTO " + table + " ("
+            # sql = "INSERT INTO " + table + " ("
 
-            count_fields = 1
-            tot_fields = len(fields)
-            for field in fields:
-                if count_fields < tot_fields:
-                    sql += field + ","
-                else:
-                    sql += field + ""
+            # count_fields = 1
+            # tot_fields = len(fields)
+            # for field in fields:
+            #     if count_fields < tot_fields:
+            #         sql += field + ","
+            #     else:
+            #         sql += field + ""
 
-                count_fields = count_fields + 1
+            #     count_fields = count_fields + 1
             
-            sql += ") VALUES ( "
+            # sql += ") VALUES ( "
 
-            count_values = 1
-            tot_values = len(values)
-            for value in values:
-                if count_values < tot_values:
-                    sql += "'" + value + "',"
-                else:
-                    sql += "'" + value + "'"
+            # count_values = 1
+            # tot_values = len(values)
+            # for value in values:
+            #     if count_values < tot_values:
+            #         sql += "'" + value + "',"
+            #     else:
+            #         sql += "'" + value + "'"
 
-                count_values = count_values + 1
+            #     count_values = count_values + 1
 
-            sql += ")"
+            # sql += ")"
 
             return sql
         
@@ -87,7 +87,8 @@ class Query:
 
         elif type_query == "DELETE":
             return "Delete"
-                    
+
+                   
     def exQueryData(sql):
         conn = pyodbc.connect('DSN='+OrdersAddonSyncro.get_configuration().get('connection','conn_dns')+';')
         cursor = conn.cursor()

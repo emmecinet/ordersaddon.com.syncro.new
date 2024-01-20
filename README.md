@@ -9,3 +9,7 @@ pip install wheel
 pip install pyodbc
 pip install requests
 pip install pyinstaller
+
+
+#Note
+
