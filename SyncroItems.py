@@ -17,6 +17,7 @@ class SyncroItems:
         controller = "Items"
         nameFileJson = 'Syncro.Items.json'
         table = "ART"
+        fieldOrder = {'ART_CODICE':'ASC'}
         fields = [
             'ART_CODICE', 
             'ART_CODICE_ALTERNATIVO', 
@@ -44,7 +45,7 @@ class SyncroItems:
         print("Inizializzazione Sincronizzazione: " + controller.upper())
 
         #read and create data output
-        sql = Query.builderQuery("SELECT",table,fields,[],[],{'ART_CODICE':'ASC'})
+        sql = Query.builderQuery("SELECT",table,fields,[],[],fieldOrder)
         print("Esecuzione QUERY: " + sql)
         print("Lettura DATI...")
 
@@ -109,7 +110,11 @@ class SyncroItems:
         urlApi = config.get("api", "api_url")+fileController+"?apiKey="+apiKey+"&controller="+controller+""
         print("Chiamata API: " + urlApi + '...')
         callApi = Utility.callApi(urlApi)
-        print(callApi)
+        #print(callApi)
+        fileJsonLog = callApi
+        #now = str(datetime.now().year)+'_'+str(datetime.now().month)+'_'+str(datetime.now().day)+'_'+str(datetime.now().hour)+'_'+str(datetime.now().minute)+'_'+str(datetime.now().second)
+        with open('logs/'+nameFileJson, "w") as f:
+            f.write(fileJsonLog)
 
         #delete tmp file
         print("Pulizia e rimozione file...")

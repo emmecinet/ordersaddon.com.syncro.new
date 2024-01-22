@@ -17,6 +17,7 @@ class SyncroCategories:
         controller = "SubCategories"
         nameFileJson = 'Syncro.SubCategories.json'
         table = "TBLME"
+        fieldOrder = {'TBLME_DESCRIZIONE1':'ASC'}
         fields = [
             'TBLME_CODICE2', 
             'TBLME_DESCRIZIONE1',
@@ -30,7 +31,7 @@ class SyncroCategories:
         print("Inizializzazione Sincronizzazione: " + controller.upper())
 
         #read and create data output
-        sql = Query.builderQuery("SELECT",table,fields,[],[],{'TBLME_DESCRIZIONE1':'ASC'})
+        sql = Query.builderQuery("SELECT",table,fields,[],[],fieldOrder)
         print("Esecuzione QUERY: " + sql)
         print("Lettura DATI...")
 
@@ -67,7 +68,11 @@ class SyncroCategories:
         urlApi = config.get("api", "api_url")+fileController+"?apiKey="+apiKey+"&controller="+controller+""
         print("Chiamata API: " + urlApi + '...')
         callApi = Utility.callApi(urlApi)
-        print(callApi)
+        #print(callApi)
+        fileJsonLog = callApi
+        #now = str(datetime.now().year)+'_'+str(datetime.now().month)+'_'+str(datetime.now().day)+'_'+str(datetime.now().hour)+'_'+str(datetime.now().minute)+'_'+str(datetime.now().second)
+        with open('logs/'+nameFileJson, "w") as f:
+            f.write(fileJsonLog)
 
         #delete tmp file
         print("Pulizia e rimozione file...")

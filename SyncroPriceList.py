@@ -17,6 +17,7 @@ class SyncroPriceList:
         controller = "PriceLists"
         nameFileJson = 'Syncro.PriceLists.json'
         table = "LIS"
+        fieldOrder = {'LIS_CODICE_ART':'ASC'}
         fields = [
             'LIS_CODICE_ART', 
             'LIS_CODICE_LI',
@@ -34,7 +35,7 @@ class SyncroPriceList:
         print("Inizializzazione Sincronizzazione: " + controller.upper())
 
         #read and create data output
-        sql = Query.builderQuery("SELECT",table,fields,[],[],{'LIS_CODICE_ART':'ASC'})
+        sql = Query.builderQuery("SELECT",table,fields,[],[],fieldOrder)
         print("Esecuzione QUERY: " + sql)
         print("Lettura DATI...")
 
@@ -59,7 +60,7 @@ class SyncroPriceList:
             data4json['LIS_AA'] = d[3]
             data4json['LIS_MM'] = d[4]
             data4json['LIS_GG'] = d[5]
-            data4json['LIS_DATA_FINE_VLD'] = d[6]
+            data4json['LIS_DATA_FINE_VLD'] = ''
 
             dataJson.append(data4json)
 
@@ -79,7 +80,11 @@ class SyncroPriceList:
         urlApi = config.get("api", "api_url")+fileController+"?apiKey="+apiKey+"&controller="+controller+""
         print("Chiamata API: " + urlApi + '...')
         callApi = Utility.callApi(urlApi)
-        print(callApi)
+        #print(callApi)
+        fileJsonLog = callApi
+        #now = str(datetime.now().year)+'_'+str(datetime.now().month)+'_'+str(datetime.now().day)+'_'+str(datetime.now().hour)+'_'+str(datetime.now().minute)+'_'+str(datetime.now().second)
+        with open('logs/'+nameFileJson, "w") as f:
+            f.write(fileJsonLog)
 
         #delete tmp file
         print("Pulizia e rimozione file...")
