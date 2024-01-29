@@ -2,6 +2,7 @@ from ClassOrdersAddonSyncro import OrdersAddonSyncro
 from ClassQuery import Query
 from ClassUtility import Utility
 from ClassFtp import Ftp
+from ClassMail import Mail
 from datetime import datetime
 
 import os
@@ -83,3 +84,10 @@ class SyncroCategories:
         print("------------------------------------------------")
 
 SyncroCategories.syncro()
+
+controller = 'SubCategories'
+with open('logs/Syncro.SubCategories.json') as f:
+    lines = f.readlines()
+messageObject = OrdersAddonSyncro.get_configuration().get("general", "app_customer") + ', Syncro ' + controller +' ' + str(datetime.now())
+messageBody = str(datetime.now()) + '\n\nElaborazione: ' + controller + '\n\nJson:\n\n' + str(lines)
+Mail.send(messageObject,messageBody)

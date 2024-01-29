@@ -1,5 +1,6 @@
 import ftplib
 from ClassOrdersAddonSyncro import OrdersAddonSyncro as oa
+
 class Ftp:
     
     ftp_host = oa.get_configuration().get('ftp','ftp_server')
