@@ -16,7 +16,7 @@ pyinstaller SyncroCustomers.py --onefile
 pyinstaller SyncroCustomersDestinations.py --onefile
 pyinstaller SyncroItems.py --onefile
 pyinstaller SyncroItemsWareHouse.py --onefile
-pyinstaller SyncroPriceList.py --onefile
+pyinstaller SyncroPriceLists.py --onefile
 pyinstaller SyncroSuppliers.py --onefile
 
 
