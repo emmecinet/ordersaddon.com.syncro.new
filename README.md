@@ -8,8 +8,11 @@ python.exe -m pip install --upgrade pip
 pip install wheel
 pip install pyodbc
 pip install requests
-
+pip install schedule
 pip install pyinstaller
+
+pyinstaller Scheduler.py --onefile
+
 pyinstaller SyncroCategories.py --onefile
 pyinstaller SyncroSubCategories.py --onefile
 pyinstaller SyncroCustomers.py --onefile

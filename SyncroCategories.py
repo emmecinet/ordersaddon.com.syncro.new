@@ -3,6 +3,7 @@ from ClassQuery import Query
 from ClassUtility import Utility
 from ClassFtp import Ftp
 from ClassMail import Mail
+from time import time
 from datetime import datetime
 
 import os
@@ -89,3 +90,7 @@ with open('logs/Syncro.Categories.json') as f:
 messageObject = OrdersAddonSyncro.get_configuration().get("general", "app_customer") + ', Syncro ' + controller +' ' + str(datetime.now())
 messageBody = str(datetime.now()) + '\n\nElaborazione: ' + controller + '\n\nJson:\n\n' + str(lines)
 Mail.send(messageObject,messageBody)
+
+input("Press enter to exit;")
+
+

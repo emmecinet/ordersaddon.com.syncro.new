@@ -1,1 +1,1 @@
-{"OK":72142,"KO":6,"message":"ARCOM.000.008;AZZ.400.102;EBAN;INSVEA;TS.100.016;VI.000.506;"}
+Connection failed: Access denied for user 'pordersg_wa_basic'@'localhost' to database 'pordersg_wa_basic'
