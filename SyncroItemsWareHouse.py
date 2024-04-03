@@ -8,6 +8,8 @@ from datetime import datetime
 import os
 import json
 
+configPath = OrdersAddonSyncro.get_configuration_path()
+
 class SyncroItemsWareHouse:
 
     def syncro():
@@ -113,13 +115,13 @@ class SyncroItemsWareHouse:
         #create json
         print("Creazione JSON...")
         fileJson = json.dumps(dataJson, indent=2)
-        with open('temp/'+nameFileJson, "w") as outfile:
+        with open(configPath+'/temp/'+nameFileJson, "w") as outfile:
             outfile.write(fileJson)
 
         #upload fila FTP
         print("Upload file FTP...")
-        Ftp.upload('temp/'+nameFileJson,'import/'+nameFileJson)
-        Ftp.upload('temp/'+nameFileJson,'log/'+curDateTime+"_"+nameFileJson)
+        Ftp.upload(configPath+'/temp/'+nameFileJson,'import/'+nameFileJson)
+        Ftp.upload(configPath+'/temp/'+nameFileJson,'log/'+curDateTime+"_"+nameFileJson)
 
         #call api url 
         apiKey = config.get("api", "api_key")
@@ -129,22 +131,14 @@ class SyncroItemsWareHouse:
         #print(callApi)
         fileJsonLog = callApi
         #now = str(datetime.now().year)+'_'+str(datetime.now().month)+'_'+str(datetime.now().day)+'_'+str(datetime.now().hour)+'_'+str(datetime.now().minute)+'_'+str(datetime.now().second)
-        with open('logs/'+nameFileJson, "w") as f:
+        with open(configPath+'/logs/'+nameFileJson, "w") as f:
             f.write(fileJsonLog)
 
         #delete tmp file
         print("Pulizia e rimozione file...")
-        os.remove('temp/'+nameFileJson)
+        os.remove(configPath+'/temp/'+nameFileJson)
 
         print("Procedura di sicronizzazione completata!")
         print(datetime.now())
         print("------------------------------------------------")
 
-SyncroItemsWareHouse.syncro()
-
-controller = 'Items WareHouse'
-with open('logs/Syncro.ItemsWareHouse.json') as f:
-    lines = f.readlines()
-messageObject = OrdersAddonSyncro.get_configuration().get("general", "app_customer") + ', Syncro ' + controller +' ' + str(datetime.now())
-messageBody = str(datetime.now()) + '\n\nElaborazione: ' + controller + '\n\nJson:\n\n' + str(lines)
-Mail.send(messageObject,messageBody)
