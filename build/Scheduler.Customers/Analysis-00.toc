@@ -1,5 +1,7 @@
-(['C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\Scheduler.Customers.py'],
- ['C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new'],
+(['C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+  'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\Scheduler.Customers.py'],
+ ['C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+  'Drive\\Sviluppo\\ordersaddon.com.syncro.new'],
  [],
  ['C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks',
   'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\site-packages\\_pyinstaller_hooks_contrib\\hooks'],
@@ -16,7 +18,8 @@
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
    'PYSOURCE'),
   ('Scheduler.Customers',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\Scheduler.Customers.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\Scheduler.Customers.py',
    'PYSOURCE')],
  [('inspect',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\inspect.py',
@@ -306,11 +309,11 @@
   ('stringprep',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\stringprep.py',
    'PYMODULE'),
-  ('_py_abc',
-   'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\_py_abc.py',
-   'PYMODULE'),
   ('tracemalloc',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\tracemalloc.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\_py_abc.py',
    'PYMODULE'),
   ('subprocess',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\subprocess.py',
@@ -325,7 +328,8 @@
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\site-packages\\schedule\\__init__.py',
    'PYMODULE'),
   ('SyncroSuppliers',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\SyncroSuppliers.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\SyncroSuppliers.py',
    'PYMODULE'),
   ('json',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\json\\__init__.py',
@@ -340,7 +344,8 @@
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\json\\scanner.py',
    'PYMODULE'),
   ('ClassFtp',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\ClassFtp.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassFtp.py',
    'PYMODULE'),
   ('ftplib',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\ftplib.py',
@@ -352,7 +357,8 @@
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\ssl.py',
    'PYMODULE'),
   ('ClassUtility',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\ClassUtility.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassUtility.py',
    'PYMODULE'),
   ('requests',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\site-packages\\requests\\__init__.py',
@@ -592,29 +598,36 @@
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\site-packages\\urllib3\\contrib\\emscripten\\fetch.py',
    'PYMODULE'),
   ('ClassQuery',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\ClassQuery.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassQuery.py',
    'PYMODULE'),
   ('SyncroCustomersDestinations',
-   'C:\\Sviluppo '
-   '(locale)\\ordersaddon.com.syncro.new\\SyncroCustomersDestinations.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\SyncroCustomersDestinations.py',
    'PYMODULE'),
   ('SyncroCustomers',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\SyncroCustomers.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\SyncroCustomers.py',
    'PYMODULE'),
   ('SyncroPriceLists',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\SyncroPriceLists.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\SyncroPriceLists.py',
    'PYMODULE'),
   ('SyncroItemsWareHouse',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\SyncroItemsWareHouse.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\SyncroItemsWareHouse.py',
    'PYMODULE'),
   ('SyncroItems',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\SyncroItems.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\SyncroItems.py',
    'PYMODULE'),
   ('SyncroSubCategories',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\SyncroSubCategories.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\SyncroSubCategories.py',
    'PYMODULE'),
   ('SyncroCategories',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\SyncroCategories.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\SyncroCategories.py',
    'PYMODULE'),
   ('datetime',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\datetime.py',
@@ -623,7 +636,8 @@
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\_pydatetime.py',
    'PYMODULE'),
   ('ClassMail',
-   'C:\\Sviluppo (locale)\\ordersaddon.com.syncro.new\\ClassMail.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassMail.py',
    'PYMODULE'),
   ('email.mime.multipart',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\email\\mime\\multipart.py',
@@ -644,8 +658,8 @@
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\smtplib.py',
    'PYMODULE'),
   ('ClassOrdersAddonSyncro',
-   'C:\\Sviluppo '
-   '(locale)\\ordersaddon.com.syncro.new\\ClassOrdersAddonSyncro.py',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassOrdersAddonSyncro.py',
    'PYMODULE'),
   ('this',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\this.py',
@@ -704,8 +718,8 @@
  [],
  [],
  [('base_library.zip',
-   'C:\\Sviluppo '
-   '(locale)\\ordersaddon.com.syncro.new\\build\\Scheduler.Customers\\base_library.zip',
+   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
+   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\build\\Scheduler.Customers\\base_library.zip',
    'DATA'),
   ('certifi\\cacert.pem',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\site-packages\\certifi\\cacert.pem',
