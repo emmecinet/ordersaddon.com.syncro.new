@@ -22,6 +22,5 @@ pyinstaller SyncroItemsWareHouse.py --onefile
 pyinstaller SyncroPriceLists.py --onefile
 pyinstaller SyncroSuppliers.py --onefile
 
-
 #Note
 
