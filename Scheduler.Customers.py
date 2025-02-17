@@ -1,14 +1,8 @@
-from ClassOrdersAddonSyncro import OrdersAddonSyncro
-from ClassMail import Mail
+from classes.ClassOrdersAddonSyncro import OrdersAddonSyncro
+from classes.ClassMail import Mail
 from datetime import datetime
-from SyncroCategories import SyncroCategories
-from SyncroSubCategories import SyncroSubCategories
-from SyncroItems import SyncroItems
-from SyncroItemsWareHouse import SyncroItemsWareHouse
-from SyncroPriceLists import SyncroPriceLists
-from SyncroCustomers import SyncroCustomers
-from SyncroCustomersDestinations import SyncroCustomersDestinations
-from SyncroSuppliers import SyncroSuppliers
+from classes.ClassSyncroCustomers import SyncroCustomers
+from classes.ClassSyncroCustomersDestinations import SyncroCustomersDestinations
 
 import schedule
 import time
