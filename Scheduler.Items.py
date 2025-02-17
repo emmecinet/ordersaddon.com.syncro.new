@@ -28,3 +28,6 @@ def SyncItems():
     Mail.send(messageObject,messageBody)
 
 SyncItems()
+
+#input("Press enter to exit;")
+time.sleep(5)

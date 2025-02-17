@@ -13,7 +13,6 @@ from SyncroSuppliers import SyncroSuppliers
 import schedule
 import time
 
-#C:/Zucchetti.Ordersaddon.UDDistribuzione.2.0/'
 configPath = OrdersAddonSyncro.get_configuration_path()
 
 def SyncCustomers():
@@ -40,3 +39,6 @@ def SyncCustomersDestinations():
 
 SyncCustomers()
 SyncCustomersDestinations()
+
+#input("Press enter to exit;")
+time.sleep(5)

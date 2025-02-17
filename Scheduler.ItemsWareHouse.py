@@ -28,3 +28,6 @@ def SyncItemsWarehouse():
     Mail.send(messageObject,messageBody)
 
 SyncItemsWarehouse()
+
+#input("Press enter to exit;")
+time.sleep(5)

@@ -28,3 +28,6 @@ def SyncPriceLists():
     Mail.send(messageObject,messageBody)
 
 SyncPriceLists()
+
+#input("Press enter to exit;")
+time.sleep(5)

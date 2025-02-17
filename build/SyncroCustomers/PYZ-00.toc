@@ -1,24 +1,18 @@
-('C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
- 'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\build\\SyncroCustomers\\PYZ-00.pyz',
+('D:\\Sviluppo\\ordersaddon.com.syncro.new\\build\\SyncroCustomers\\PYZ-00.pyz',
  [('ClassFtp',
-   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
-   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassFtp.py',
+   'D:\\Sviluppo\\ordersaddon.com.syncro.new\\ClassFtp.py',
    'PYMODULE'),
   ('ClassMail',
-   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
-   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassMail.py',
+   'D:\\Sviluppo\\ordersaddon.com.syncro.new\\ClassMail.py',
    'PYMODULE'),
   ('ClassOrdersAddonSyncro',
-   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
-   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassOrdersAddonSyncro.py',
+   'D:\\Sviluppo\\ordersaddon.com.syncro.new\\ClassOrdersAddonSyncro.py',
    'PYMODULE'),
   ('ClassQuery',
-   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
-   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassQuery.py',
+   'D:\\Sviluppo\\ordersaddon.com.syncro.new\\ClassQuery.py',
    'PYMODULE'),
   ('ClassUtility',
-   'C:\\Users\\fabio\\Streaming di Google Drive\\Il mio '
-   'Drive\\Sviluppo\\ordersaddon.com.syncro.new\\ClassUtility.py',
+   'D:\\Sviluppo\\ordersaddon.com.syncro.new\\ClassUtility.py',
    'PYMODULE'),
   ('__future__',
    'C:\\Users\\fabio\\AppData\\Local\\Programs\\Python\\Python312-32\\Lib\\__future__.py',

@@ -13,14 +13,10 @@ pip install pyinstaller
 
 pyinstaller Scheduler.py --onefile
 
-pyinstaller SyncroCategories.py --onefile
-pyinstaller SyncroSubCategories.py --onefile
-pyinstaller SyncroCustomers.py --onefile
-pyinstaller SyncroCustomersDestinations.py --onefile
-pyinstaller SyncroItems.py --onefile
-pyinstaller SyncroItemsWareHouse.py --onefile
-pyinstaller SyncroPriceLists.py --onefile
-pyinstaller SyncroSuppliers.py --onefile
-
-#Note
+pyinstaller Scheduler.Categories.py --onefile
+pyinstaller Scheduler.Customers.py --onefile
+pyinstaller Scheduler.Items.py --onefile
+pyinstaller Scheduler.ItemsWareHouse.py --onefile
+pyinstaller Scheduler.PriceLists.py --onefile
+pyinstaller Scheduler.Suppliers.py --onefile
 
