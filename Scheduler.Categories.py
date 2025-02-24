@@ -1,13 +1,13 @@
-from classes.ClassOrdersAddonSyncro import OrdersAddonSyncro
-from classes.ClassMail import Mail
+from OrdersAddonSyncro import OrdersAddonSyncro
+from ClassMail import Mail
 from datetime import datetime
-from classes.ClassSyncroCategories import SyncroCategories
-from classes.ClassSyncroSubCategories import SyncroSubCategories
+from SyncroCategories import SyncroCategories
+from SyncroSubCategories import SyncroSubCategories
 
 import schedule
 import time
 
-configPath = OrdersAddonSyncro.get_configuration_path()
+configPath = OrdersAddonSyncro.get_configuration().get("general", "app_path")
 
 def SyncCategories():
     

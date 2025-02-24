@@ -1,13 +1,12 @@
-from classes.ClassOrdersAddonSyncro import OrdersAddonSyncro
-from classes.ClassMail import Mail
+from OrdersAddonSyncro import OrdersAddonSyncro
+from ClassMail import Mail
 from datetime import datetime
-from classes.ClassSyncroPriceLists import SyncroPriceLists
+from SyncroPriceLists import SyncroPriceLists
 
 import schedule
 import time
 
-#C:/Zucchetti.Ordersaddon.UDDistribuzione.2.0/'
-configPath = OrdersAddonSyncro.get_configuration_path()
+configPath = OrdersAddonSyncro.get_configuration().get("general", "app_path")
 
 def SyncPriceLists():
     
