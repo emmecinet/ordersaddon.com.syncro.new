@@ -66,15 +66,15 @@ class SyncroSubCategories:
         Ftp.upload(configPath+'/temp/'+nameFileJson,'import/'+nameFileJson,config.get("ftp", "ftp_server"),config.get("ftp", "ftp_user"),config.get("ftp", "ftp_pass"))
         
         #call api url 
-        apiKey = config.get("api", "api_key")
-        urlApi = config.get("api", "api_url")+fileController+"?apiKey="+apiKey+"&controller="+controller+""
-        print("Chiamata API: " + urlApi + '...')
-        callApi = Utility.callApi(urlApi)
+        #apiKey = config.get("api", "api_key")
+        #urlApi = config.get("api", "api_url")+fileController+"?apiKey="+apiKey+"&controller="+controller+""
+        #print("Chiamata API: " + urlApi + '...')
+        #callApi = Utility.callApi(urlApi)
         #print(callApi)
-        fileJsonLog = callApi
+        #fileJsonLog = callApi
         #now = str(datetime.now().year)+'_'+str(datetime.now().month)+'_'+str(datetime.now().day)+'_'+str(datetime.now().hour)+'_'+str(datetime.now().minute)+'_'+str(datetime.now().second)
-        with open(configPath+'/logs/'+nameFileJson, "w") as f:
-            f.write(fileJsonLog)
+        #with open(configPath+'/logs/'+nameFileJson, "w") as f:
+        #    f.write(fileJsonLog)
 
         #delete tmp file
         print("Pulizia e rimozione file...")

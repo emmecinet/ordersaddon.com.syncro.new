@@ -13,10 +13,10 @@ pip install pyinstaller
 
 pyinstaller Scheduler.py --onefile
 
-pyinstaller Scheduler.Categories.py --onefile
-pyinstaller Scheduler.Customers.py --onefile
-pyinstaller Scheduler.Items.py --onefile
-pyinstaller Scheduler.ItemsWareHouse.py --onefile
-pyinstaller Scheduler.PriceLists.py --onefile
-pyinstaller Scheduler.Suppliers.py --onefile
+pyinstaller Scheduler.Categories.py -F --onefile
+pyinstaller Scheduler.Customers.py -F --onefile
+pyinstaller Scheduler.Items.py -F --onefile
+pyinstaller Scheduler.ItemsWareHouse.py -F --onefile
+pyinstaller Scheduler.PriceLists.py -F --onefile
+pyinstaller Scheduler.Suppliers.py -F --onefile
 
